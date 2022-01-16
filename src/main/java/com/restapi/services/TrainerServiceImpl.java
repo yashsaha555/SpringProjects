@@ -29,7 +29,7 @@ public class TrainerServiceImpl implements TrainerService{
     @Override
     public Trainer updateTrainer(int id, Trainer trainer) {
         Trainer existingTrainer=getTrainerById(id);
-        BeanUtils.copyProperties(trainer,existingTrainer,"id");
+        BeanUtils.copyProperties(trainer,existingTrainer,"trainerId");
         return trainerRepository.saveAndFlush(existingTrainer);
     }
 

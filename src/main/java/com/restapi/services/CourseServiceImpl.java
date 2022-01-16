@@ -24,14 +24,14 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Course creteCourse(Course course) {
+    public Course createCourse(Course course) {
         return courseRepository.saveAndFlush(course);
     }
 
     @Override
     public Course updateCourse(int id, Course course) {
-        Course existingCourse=courseRepository.getById(id);
-        BeanUtils.copyProperties(course,existingCourse,"id");
+        Course existingCourse = getCourseById(id);
+        BeanUtils.copyProperties(course,existingCourse,"courseId");
         return courseRepository.saveAndFlush(existingCourse);
     }
 

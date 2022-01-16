@@ -24,7 +24,7 @@ public class CourseController {
     @PostMapping("/postCourse")
     public Course postCourse(@RequestBody Course course)
     {
-        return courseService.creteCourse(course);
+        return courseService.createCourse(course);
     }
     @PutMapping("/updateCourse/{id}")
     public Course updateCourse(@PathVariable int id, @RequestBody Course course)
